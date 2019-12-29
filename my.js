@@ -6,7 +6,7 @@ function init() {
   renderer = new THREE.WebGLRenderer({antialias:true});
   renderer.setSize(window.innerWidth,window.innerHeight);
   document.body.appendChild(renderer.domElement);
-  let controls = new THREE.OrbitControls(camera);
+  let controls = new THREE.OrbitControls(camera,renderer.domElement);
   controls.addEventListener('change', renderer);
   controls.minDistance = 500;
   controls.maxDistance = 1500;
