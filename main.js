@@ -12,7 +12,7 @@ function init(){
         document.body.appendChild(renderer.domElement);
 
         let controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.addEventListener('change', renderer.render(scene, camera));
+        controls.addEventListener('change', re);
         controls.minDistance = 500;
         controls.maxDistance = 1500;
 
@@ -39,8 +39,12 @@ function init(){
         scene.add(skybox);
         animate();
 }
+    function re(){
+        renderer.render(scene, camera);
+    }
+
         function animate(){
-            renderer.render(scene, camera);
+           re();
             requestAnimationFrame(animate);
         }
         init();
